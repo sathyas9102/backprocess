@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up</title>
+
+    {%load static%}
+    <!--style css-->
+    <link rel="stylesheet" href="{% static 'css/login.css'%}" />
+  </head>
+  <body class="reg_img">
+    {%block content%}
+    <div class="form_content">
+      <h3 class="login">sign in</h3>
+
+      <form action="register" method="POST" autocomplete="off">
+        {% csrf_token%}
+        <div class="input_field">
+          <label>Username:*</label>
+          <input type="text" name="username" required="" />
+        </div>
+
+        <div class="input_field">
+          <label>First_Name:*</label>
+          <input type="text" name="fname" required="" />
+        </div>
+
+        <div class="input_field">
+          <label>Last_Name:*</label>
+          <input type="text" name="lname" required="" />
+        </div>
+
+        <div class="input_field">
+          <label>Email:*</label>
+          <input type="text" name="email" required="" />
+        </div>
+
+        <div class="input_field">
+          <label>password:*</label>
+          <input type="password" name="password" required="" />
+        </div>
+
+        <div class="input_field">
+          <label> Retype password:*</label>
+          <input type="password" name="password" required="" />
+        </div>
+
+        <button type="submit" class="forgot_pass2">submit</button>
+
+        <div class="bottpm_link">
+          you have an account?<a href="login.html">login</a>
+        </div>
+      </form>
+    </div>
+    {%endblock%}
+  </body>
+</html>
